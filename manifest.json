@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "chrome http proxy",
+    "version": "1.0.1",
+    "description": "通过修改插件配置的方式，可以将服务器的页面代理到本地以便开发。",
+    "icons": {
+        "16": "linshi.png",
+        "48": "linshi.png",
+        "128": "linshi.png"
+    },
+    "browser_action": {
+        "default_title": "永远滴神",
+        "default_popup": "./popup.html"
+    },
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>",
+        "contextMenus",
+        "tabs",
+        "cookies",
+        "proxy",
+        "declarativeContent",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    }
+}

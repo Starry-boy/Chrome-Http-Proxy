@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+	</head>
+	<!-- <script type="text/javascript" src="./vue.min.js"></script> -->
+	
+
+	<body>
+		<div id="app">
+			<h1>Chrome Proxy</h1>
+			  <div class="app1">
+			      <span class='a1'>开关</span class='a1'>
+			      <input type="checkbox" id="ym" class="chooseBtn"/>
+			      <label for="ym" class="choose-label a2">
+				  </label>
+			    </div>
+				域名 <input type="text" class='in1' name='site' id="site"/>
+			<div class='app1'>
+
+
+				<!-- <span class='a1'>添加代理</span class='a1'> -->
+				<span class='btn1' id='add'> 添加代理 </span>
+
+				<span class='btn1' style='margin-left: 5px;' id='qqBtn'>保存</span>
+				<div id="app2">
+					<div style="width: 280px;text-align: center;margin: 0 auto;">
+						<div style="width: 50%;text-align: center; float: left;">匹配路径</div>
+						<div style="width: 50%;text-align: center;float: left;">目标路径</div>
+					</div>
+					<div id="listItem">
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</body>
+
+	<script type="text/javascript" src="./popup.js"></script>
+	<style>
+		#app {
+			width: 370px;
+			/* height: 65px; */
+			text-align: center;
+			line-height: 30px;
+			-webkit-user-select: none;
+			/*webkit浏览器*/
+			user-select: none;
+		}
+
+		.a1,
+		.a2 {
+			vertical-align: middle;
+			margin: 0 5px;
+		}
+
+		.l1 {
+			font-size: 15px;
+			cursor: pointer;
+		}
+
+		.btn1 {
+			border: 1px solid #ccc;
+			padding: 2px 3px;
+			border-radius: 6px;
+			cursor: pointer;
+			position: relative;
+		}
+		
+		.btn1:active{
+		    top: 2px; /**向下偏移2px **/
+			border: 1px solid #ccc;
+			padding: 2px 3px;
+			border-radius: 6px;
+			cursor: pointer;
+		}
+
+		.in1 {
+			border: 1px solid #ccc;
+			padding: 2px 3px;
+			border-radius: 6px;
+			cursor: pointer;
+			width: 130px;
+		}
+
+		.chooseBtn {
+			display: none;
+			/*input不可见，实际只用到了lable*/
+		}
+
+		.choose-label {
+			box-shadow: #ccc 0px 0px 0px 1px;
+			width: 30px;
+			/*长条长度*/
+			height: 15px;
+			/*长条高度*/
+			display: inline-block;
+			border-radius: 20px;
+			position: relative;
+			background-color: #bdbdbd;
+			overflow: hidden;
+		}
+
+		/*小圆点*/
+		.choose-label:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			width: 15px;
+			/*圆点半径*/
+			height: 15px;
+			/*圆点半径*/
+			display: inline-block;
+			border-radius: 10px;
+			background-color: #fff;
+			z-index: 20;
+			-webkit-transition: all 0.28s;
+			transition: all 0.28s;
+		}
+
+		.chooseBtn:checked+label.choose-label:before {
+			left: 15px;
+			/*圆点距离左边的距离，设置长条的一半较好*/
+		}
+
+		.chooseBtn:checked+label.choose-label {
+			background-color: #3CB371;
+			/*绿色*/
+		}
+	</style>
+
+
+
+</html>
